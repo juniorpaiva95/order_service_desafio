@@ -1,0 +1,18 @@
+server.error.include-stacktrace: never
+
+# Spring
+spring:
+  application.name: order_service
+  profiles.active: dev
+
+  # H2 database
+  jpa.hibernate.ddl-auto: update
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: user
+    password: 
+
+  #  H2 console
+  h2.console:
+    enabled: true
+    path: /h2-console
