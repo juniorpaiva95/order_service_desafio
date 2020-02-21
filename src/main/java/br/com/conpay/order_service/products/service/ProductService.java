@@ -52,4 +52,11 @@ public class ProductService {
         return new ProductDTO(repository.save(product.toEntity()));
     }
 
+    public ProductDTO delete(ProductDTO product) {
+        log.info("Product -> delete");
+
+        repository.delete(product.toEntity());
+        return new ProductDTO(product.toEntity());
+    }
+
 }

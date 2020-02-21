@@ -28,14 +28,18 @@ public class ProductDTO {
     @NotNull
     private Double price;
 
+    @Min(value = 1)
+    @NotNull
+    private Integer stock;
+
     private ProductStatus status;
 
     public ProductDTO(Product product) {
-        this(product.getId(), product.getDescription(), product.getPrice(), product.getStatus());
+        this(product.getId(), product.getDescription(), product.getPrice(), product.getStock(), product.getStatus());
     }
 
     public Product toEntity() {
-        return new Product(getId(), getTitle(), getPrice(), getStatus());
+        return new Product(getId(), getTitle(), getPrice(), getStock(), getStatus());
     }
 
 }
